@@ -4,26 +4,27 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="10dp"
-    android:background="#FFFFFF"
-    android:elevation="2dp">
+    android:background="@drawable/bogoc1"
+    android:elevation="2dp"
+    android:gravity="center_vertical">
 
-    <!-- Hình ảnh -->
+    <!-- Ảnh sản phẩm -->
     <ImageView
         android:id="@+id/itemImage"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/bg_flower"
         android:layout_marginEnd="12dp"
         android:background="#F3E5F5"
-        android:padding="4dp" />
+        android:contentDescription="Ảnh hoa"
+        android:adjustViewBounds="true" />
 
-    <!-- Thông tin tên và giá -->
+    <!-- Tên và giá sản phẩm -->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
 
         <TextView
             android:id="@+id/nameText"
@@ -41,16 +42,19 @@
             android:text="10000đ"
             android:textSize="14sp"
             android:textColor="#7B1FA2"
-            android:layout_marginTop="4dp"/>
+            android:layout_marginTop="4dp" />
     </LinearLayout>
 
     <!-- Nút thêm -->
     <Button
-        android:id="@+id/btnAdd"
+        android:id="@+id/detailAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="➕"
-        android:backgroundTint="#7B1FA2"
+        android:text="Thêm"
+        android:drawableStart="@drawable/plus"
+        android:drawablePadding="8dp"
+        android:layout_marginStart="12dp"
+        android:backgroundTint="#AAAAAA"
         android:textColor="#FFFFFF"
         android:padding="8dp" />
 </LinearLayout>

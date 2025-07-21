@@ -25,7 +25,15 @@ public class CartManager {
                 return;
             }
         }
-        Flower flowerCopy = new Flower(flower.getName(), flower.getPrice());
+
+        // ✅ Tạo bản sao giữ đúng loại ảnh
+        Flower flowerCopy;
+        if (flower.getImageUrl() != null) {
+            flowerCopy = new Flower(flower.getName(), flower.getPrice(), flower.getImageUrl());
+        } else {
+            flowerCopy = new Flower(flower.getName(), flower.getPrice(), flower.getImageResId());
+        }
+
         flowerCopy.setQuantity(1);
         cart.add(flowerCopy);
     }

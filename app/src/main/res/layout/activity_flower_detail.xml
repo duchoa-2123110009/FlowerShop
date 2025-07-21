@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F9F9F9"
     android:padding="16dp">
 
     <LinearLayout
@@ -9,46 +10,60 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- Ảnh sản phẩm -->
         <ImageView
             android:id="@+id/detailImage"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="240dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/bg_flower" />
+            android:adjustViewBounds="true"
+            android:background="#EEEEEE"
+            android:contentDescription="Ảnh sản phẩm" />
 
+        <!-- Tên sản phẩm -->
         <TextView
             android:id="@+id/detailName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tên hoa"
-            android:textSize="22sp"
+            android:text="Tên sản phẩm"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:paddingTop="8dp" />
+            android:textColor="#212121"
+            android:layout_marginTop="12dp" />
 
+        <!-- Giá sản phẩm -->
         <TextView
             android:id="@+id/detailPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Giá"
+            android:text="9.999.000đ"
             android:textSize="18sp"
-            android:textColor="#7B1FA2" />
+            android:textColor="#009688"
+            android:layout_marginTop="4dp" />
 
+        <!-- Mô tả sản phẩm -->
         <TextView
             android:id="@+id/detailDesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mô tả ngắn gọn về hoa này."
-            android:paddingTop="8dp"
-            android:textSize="16sp" />
+            android:text="Mô tả chi tiết về sản phẩm công nghệ: thông số kỹ thuật, chức năng, ưu điểm nổi bật..."
+            android:textSize="15sp"
+            android:textColor="#424242"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginTop="12dp" />
 
+        <!-- Nút thêm vào giỏ -->
         <Button
             android:id="@+id/detailAddBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="➕ Thêm vào giỏ"
+            android:text="Thêm vào giỏ hàng 🛒"
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="#FFF"
-            android:background="#7B1FA2"
-            android:layout_marginTop="16dp"/>
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#009688"
+            android:elevation="4dp"
+            android:layout_marginTop="24dp"
+            android:padding="12dp" />
     </LinearLayout>
 </ScrollView>
