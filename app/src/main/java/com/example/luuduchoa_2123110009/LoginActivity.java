@@ -36,13 +36,13 @@ public class LoginActivity extends AppCompatActivity {
         registerBtn = findViewById(R.id.registerBtn);
 
         loginBtn.setOnClickListener(v -> {
-            String username = emailInput.getText().toString().trim();
+            String email = emailInput.getText().toString().trim();
             String password = passwordInput.getText().toString().trim();
 
-            if (username.isEmpty() || password.isEmpty()) {
+            if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
             } else {
-                loginWithApi(username, password);
+                loginWithApi(email, password);
             }
         });
 
@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void loginWithApi(String username, String password) {
+    private void loginWithApi(String email, String password) {
         RequestQueue queue = Volley.newRequestQueue(this);
 
         StringRequest request = new StringRequest(Request.Method.GET, LOGIN_URL,
@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
                             String apiUsername = user.getString("username");
                             String apiPassword = user.getString("password");
 
-                            if (username.equals(apiUsername) && password.equals(apiPassword)) {
+                            if (email.equals(apiUsername) && password.equals(apiPassword)) {
                                 loginSuccess = true;
                                 break;
                             }
